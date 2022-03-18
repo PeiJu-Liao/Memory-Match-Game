@@ -1,0 +1,122 @@
+*{
+  box-sizing: border-box;
+}
+/* 標題 */
+#header{
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0 auto;
+  width: 85%;
+}
+#header .title{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+#header .title img{
+  max-width: 4em;
+}
+#header .title h2{
+  padding-left: 0.5em;
+  margin-bottom: 0;
+}
+#header .score{
+  margin: 0;
+  color: #6c90ac;
+}
+#header .tried{
+  margin-top : 0;
+}
+
+
+/* Flex container */
+#cards{
+  /* 卡片在牌桌上的排版 */
+  display: flex;
+  flex-wrap: wrap;
+  /*與header同寬*/
+  width: 85%; 
+  margin: 0 auto;
+}
+/* Flex item */
+.card-item{
+  /* 卡片在容器裡的排版 */
+  /* flex: flex-grow/flex-shrink/flex-basic */
+  flex: 1 1 7%; 
+  height: 8vw;
+  border: 2px solid #e0e0e0;
+  /* 卡片內部元件的排版 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 2px;
+}
+.card-item img{
+  max-width: 30%;
+  align-self: center;
+}
+.card-item p{
+  margin: 3px;
+  font-size: 10px;
+}
+.card-item p:last-child{
+  transform: rotate(180deg);
+}
+.back{
+  background: url('https://assets-lighthouse.alphacamp.co/uploads/image/file/9222/ExportedContentImage_00.png');
+  background-size: cover;
+}
+.paired{
+  background-color: #dae0e3;
+}
+
+/* 配對失敗加入CSS動畫 */
+.wrong{
+  /* 動畫名稱 */
+  animation-name: wrongAnimation;
+  /* 動畫持續多久 */
+  animation-duration: 0.2s;
+  /* 動畫執行幾次；預設1次 */
+  animation-iteration-count: 5;
+}
+
+@keyframes wrongAnimation{
+  to{
+    border: 2px solid #ffd54f
+  }
+}
+
+/* 遊戲結束畫面顯示 */
+.completed{
+  position: absolute;
+  z-index: 999;
+  top: 33vh;
+  background-color: RGBA(232, 246, 254, 0.8);
+  width: 100vw;
+  padding: 50px 0;
+}
+/* 用大於>選擇A元素內"第一層"的B元素 */
+.completed > p{
+  font-size: 1.5em;
+  color: black;
+  text-align: center;
+  margin: 0;
+}
+.completed > p:first-child{
+  font-size: 3em;
+  font-weight: 700;
+  color: #758d9a;
+}
+.completed button{
+  display: block;
+  margin: 10px auto;
+  width: 100px;
+  height:30px;
+  font-weight: 700;
+  border-radius: 30px;
+  background-color: #e0e0e0;
+}
+
+
